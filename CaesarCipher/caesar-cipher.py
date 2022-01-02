@@ -21,6 +21,8 @@ def decrypt(input_text, num_of_shift):
     new_letter_decrypt = alphabet[new_position_decrypt]
     cipher_text += new_letter_decrypt
   print(f"The decoded text is {cipher_text}")
-  
 
-encrypt(plain_text=text, shift_amount=shift)
+if direction == "encode":
+  encrypt(inputted_text=text, number_of_shift=shift)
+else:
+  decrypt(input_text=text, num_of_shift=shift)
