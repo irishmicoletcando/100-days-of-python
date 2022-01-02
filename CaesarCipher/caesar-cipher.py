@@ -24,5 +24,7 @@ def decrypt(input_text, num_of_shift):
 
 if direction == "encode":
   encrypt(inputted_text=text, number_of_shift=shift)
-else:
+elif direction == "decode":
   decrypt(input_text=text, num_of_shift=shift)
+else:
+  print("Enter 'encode' and 'decode' only.")
