@@ -13,4 +13,14 @@ def encrypt(inputted_text, number_of_shift):
     cipher_text += new_letter
   print(f"The encoded text is {cipher_text}")
 
+def decrypt(input_text, num_of_shift):
+  cipher_text = ""
+  for letter in input_text:
+    position_decrypt = alphabet.index(letter)
+    new_position_decrypt = position_decrypt - num_of_shift
+    new_letter_decrypt = alphabet[new_position_decrypt]
+    cipher_text += new_letter_decrypt
+  print(f"The decoded text is {cipher_text}")
+  
+
 encrypt(plain_text=text, shift_amount=shift)
