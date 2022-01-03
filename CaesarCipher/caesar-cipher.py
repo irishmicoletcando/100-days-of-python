@@ -41,4 +41,5 @@ def caesar(inputted_text, num_shift, direction_text):
 direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n").lower()
 text = input("Type your message:\n").lower()
 shift = int(input("Type the shift number:\n"))
+shift = shift % 25
 caesar(inputted_text=text, num_shift=shift, direction_text=direction)
