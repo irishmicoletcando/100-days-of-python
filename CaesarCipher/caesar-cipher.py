@@ -29,13 +29,16 @@ alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n'
 def caesar(inputted_text, num_shift, direction_text):
   cipher_text = ""
   for letter in inputted_text:
-    position = alphabet.index(letter)
-    if direction_text == "encode":
-      new_position = position + num_shift
-      cipher_text += alphabet[new_position]
-    elif direction_text == "decode":
-      new_position = position - num_shift
-      cipher_text += alphabet[new_position]
+    if letter in alphabet:
+      position = alphabet.index(letter)
+      if direction_text == "encode":
+        new_position = position + num_shift
+        cipher_text += alphabet[new_position]
+      elif direction_text == "decode":
+        new_position = position - num_shift
+        cipher_text += alphabet[new_position]
+    else:
+      cipher_text += letter
   print(f"The {direction_text}d text is {cipher_text}")
 
 direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n").lower()
