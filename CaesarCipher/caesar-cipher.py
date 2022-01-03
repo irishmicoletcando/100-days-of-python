@@ -41,8 +41,15 @@ def caesar(inputted_text, num_shift, direction_text):
       cipher_text += letter
   print(f"The {direction_text}d text is {cipher_text}")
 
-direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n").lower()
-text = input("Type your message:\n").lower()
-shift = int(input("Type the shift number:\n"))
-shift = shift % 25
-caesar(inputted_text=text, num_shift=shift, direction_text=direction)
+restart = True
+while restart:
+  direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n").lower()
+  text = input("Type your message:\n").lower()
+  shift = int(input("Type the shift number:\n"))
+  shift = shift % 25
+  caesar(inputted_text=text, num_shift=shift, direction_text=direction)
+
+  yes_or_no = input("Type 'yes' if you want to go again. Otherwise type 'no'. ").lower()
+  if yes_or_no == "no":
+    restart = False
+    print("Goodbye!")
