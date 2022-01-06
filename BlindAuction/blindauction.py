@@ -18,5 +18,12 @@ def blind_auction_program():
   auction["bidprice"] = bid_price
   print(auction)
 
+def yes_or_no():
+  ask_bidder = input("Are there any other bidders? Type 'yes' or 'no'. ").lower()
+  if ask_bidder == "yes":
+    clear()
+    blind_auction_program()
+
 
 blind_auction_program()
+yes_or_no()
