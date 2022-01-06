@@ -3,8 +3,21 @@ from replit import clear
 from art import logo
 print(logo)
 
-def blind_auction_program():
-  name = input("What is your name? ")
+auction = {}
+bidding_finished = False
+
+def highest_bidder(auction_record):
+  max_bid = 0
+  winner_bid = ""
+  for bid in auction_record:
+    bid_amount = auction_record[bid]
+    if bid_amount > max_bid:
+      max_bid = bid_amount
+      winner_bid = bid
+  print(f"The winner is {winner_bid} with a bid of ${max_bid}.")
+
+while not bidding_finished:
+  name = input("What is your name? ").capitalize()
   while True:
     try:
       bid_price = float(input("What's your bid? $"))
@@ -12,18 +25,11 @@ def blind_auction_program():
       print("Invalid. Please enter a number")
     else:
       break
-
-  auction = {}
-  auction["name"] = name
-  auction["bidprice"] = bid_price
-  print(auction)
-
-def yes_or_no():
+  
+  auction[name] = bid_price
   ask_bidder = input("Are there any other bidders? Type 'yes' or 'no'. ").lower()
-  if ask_bidder == "yes":
+  if ask_bidder == "no":
+    bidding_finished = True
+    highest_bidder(auction)
+  elif ask_bidder == "yes":
     clear()
-    blind_auction_program()
-
-
-blind_auction_program()
-yes_or_no()
