@@ -1,6 +1,8 @@
 from art import logo
 print(logo)
 
+second_trial = False
+
 def calculator_operation(num1, num2, operation_inputted):
   if operation_inputted == "+":
     answer = num1 + num2
@@ -23,13 +25,15 @@ while True:
   else:
     break
 
-print("+\n-\n*\n/")
-operation = input("Pick an operation: ")
+while not second_trial:
+  print("+\n-\n*\n/")
+  operation = input("Pick an operation: ")
 
-while True:
-  try:
-    second_number = float(input("What is the second number? "))
-  except ValueError:
-    print("Enter a number.")
-  else:
-    break
+  while True:
+    try:
+      second_number = float(input("What is the second number? "))
+    except ValueError:
+      print("Enter a number.")
+    else:
+      break
+  
