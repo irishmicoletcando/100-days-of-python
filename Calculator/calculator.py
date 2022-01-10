@@ -1,6 +1,13 @@
 from art import logo
 print(logo)
 
+operations = {
+  "+": add,
+  "-": subtract,
+  "*": multiply, 
+  "/": divide,
+}
+
 while True:
   try:
     first_number = float(input("What is your first number? "))
@@ -9,7 +16,8 @@ while True:
   else:
     break
 
-print("+\n-\n*\n/")
+for symbols in operations:
+  print(symbols)
 operation = input("Pick an operation: ")
 
 while True:
