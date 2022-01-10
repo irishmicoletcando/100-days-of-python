@@ -36,4 +36,13 @@ while not second_trial:
       print("Enter a number.")
     else:
       break
+
+  calculator_operation(num1=first_number, num2=second_number, operation_inputted=operation)
+
+  yes_or_no = input("Type 'y' to continue with the result, or type 'n' to exit. ").lower()
+  if yes_or_no == "n":
+    second_trial = True
+    print("Goodbye!")
+    break
+
   
