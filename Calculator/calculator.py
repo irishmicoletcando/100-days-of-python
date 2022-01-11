@@ -1,5 +1,4 @@
 from art import logo
-print(logo)
 
 def calculator_operation(num1, num2, operation_inputted):
   if operation_inputted == "+":
@@ -17,6 +16,7 @@ def calculator_operation(num1, num2, operation_inputted):
 
 def calculator_program():
   second_trial = False
+  print(logo)
   while True:
     try:
       first_number = float(input("What is your first number? "))
